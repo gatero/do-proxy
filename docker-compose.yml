@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  proxy:
+    container_name: $PROXY_CONTAINER
+    image: $PROXY_IMAGE
+    ports:
+      - $PROXY_HTTP_PORTS
+      - $PROXY_HTTPS_PORTS
+    volumes:
+      - $PROXY_VOLUME_SOCKET
+      - $PROXY_VOLUME_SSL
+networks:
+  default:
+    name: $NETWORK
